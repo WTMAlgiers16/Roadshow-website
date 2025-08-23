@@ -136,14 +136,13 @@
   }
 
   html{
-    height: 200vh;
+    height: 500vh;
   }
 
 
   body {
     background: var(--gradient-cosmic); /* gradient stays steady */
     position: relative;
-    overflow: hidden;
     height: 100%;
   }
 

@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" >
       <body
-        className={`${montserrat.variable} ${lemonJuice.variable}`}
+        className={`${montserrat.variable} ${lemonJuice.variable} px-16 py-32 flex flex-col gap-0`}
       >
         {children}
       </body>
