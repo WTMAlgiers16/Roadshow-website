@@ -5,7 +5,8 @@
 
 @theme inline {
   /*add new variable*/
-
+  --font-montserrat: var(--font-montserrat), sans-serif;
+  --font-lemon: var(--font-lemon-juice), cursive;
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -131,10 +132,43 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring/50 font-montserrat;
   }
-  body{
-    background: var(--gradient-cosmic);
+
+  html{
+    height: 200vh;
   }
+
+
+  body {
+    background: var(--gradient-cosmic); /* gradient stays steady */
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+  }
+
+  body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%; 
+    background: url("/images/bgs/stars.svg") repeat;
+    background-size: auto;
+    animation: twinkle 10s ease-in-out infinite;
+    z-index: -1; 
+  }
+
+  @keyframes twinkle {
+    0%, 100% { 
+      opacity: 1; 
+      transform: scale(1); 
+    }
+    50% { 
+      opacity: 0.8; 
+      transform: scale(0.99); 
+    }
+  }
+
 }
 
