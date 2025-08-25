@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import Image from "next/image"
 import RecapDialog from "./event-recap"
-import { destinations } from "@/data/destinations"
+import { destinations, Destination } from "@/data/destinations"
 import { useDestinationsData } from "@/hooks/useDestinationsData"
 
 export default function CardGrid() {
@@ -15,20 +15,42 @@ export default function CardGrid() {
   const firestoreData = useDestinationsData()
 
   useEffect(() => {
-    const timer = setInterval(() => setNow(new Date()), 60000)
+    const timer = setInterval(() => setNow(new Date()), 60000) // update every minute
     return () => clearInterval(timer)
   }, [])
 
+  // Merge local and Firestore data
   const merged = destinations.map((d) => ({
     ...d,
     attendees: firestoreData[d.id]?.attendees ?? d.attendees,
     images: firestoreData[d.id]?.images ?? d.images,
   }))
 
-  const revealed = merged.filter((d) => new Date(d.revealTime) <= now)
-  const current = revealed[revealed.length - 1] || null
-  const past = revealed.slice(0, -1)
-  const future = merged.filter((d) => new Date(d.revealTime) > now)
+  // Check if destination is revealed (night before at 8 PM)
+  const isDestinationRevealed = (d: Destination) => {
+    const revealTime = new Date(d.startTime)
+    revealTime.setDate(revealTime.getDate() - 1) // day before
+    revealTime.setHours(15, 0, 0, 0) // 8 PM //must change to 20
+    return now >= revealTime
+  }
+
+  // Check if recap is revealed (event day at 9 PM)
+  const isRecapRevealed = (d: Destination) => {
+    const recapTime = new Date(d.startTime)
+    recapTime.setHours(14, 0, 0, 0) // 9 PM //must change to 21
+    return now >= recapTime
+  }
+
+  // Current destination: revealed but recap not yet available
+  const current = merged.find(
+    (d) => isDestinationRevealed(d) && !isRecapRevealed(d)
+  ) || null
+
+  // Past destinations: recap available
+  const past = merged.filter((d) => isRecapRevealed(d))
+
+  // Future destinations: not yet revealed
+  const future = merged.filter((d) => !isDestinationRevealed(d))
 
   const selectedDest =
     selectedDestId !== null ? merged.find((d) => d.id === selectedDestId) || null : null
@@ -102,7 +124,7 @@ export default function CardGrid() {
           </Card>
         )}
 
-        {/* Past destinations */}
+        {/* Past destinations with recap */}
         {past.map((dest) => (
           <Card
             key={dest.id}
@@ -117,15 +139,17 @@ export default function CardGrid() {
                 className="float-planet"
               />
               <h3 className="text-xl font-semibold text-center">{dest.univ}</h3>
-              <button
-                className="px-8 py-2 rounded-[10px] bg-white text-base font-medium text-[var(--background-gradient1)] cursor-pointer hover:border-2 hover:border-white hover:bg-transparent hover:text-white transition"
-                onClick={() => {
-                  setSelectedDestId(dest.id)
-                  setDialogOpen(true)
-                }}
-              >
-                Recap
-              </button>
+              {isRecapRevealed(dest) && (
+                <button
+                  className="px-8 py-2 rounded-[10px] bg-white text-base font-medium text-[var(--background-gradient1)] cursor-pointer hover:border-2 hover:border-white hover:bg-transparent hover:text-white transition"
+                  onClick={() => {
+                    setSelectedDestId(dest.id)
+                    setDialogOpen(true)
+                  }}
+                >
+                  Recap
+                </button>
+              )}
             </CardContent>
           </Card>
         ))}
