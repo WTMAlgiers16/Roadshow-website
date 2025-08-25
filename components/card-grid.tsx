@@ -71,8 +71,8 @@ export default function CardGrid() {
                 className="float-planet"
               />
             </CardHeader>
-            <CardContent className="grid gap-6">
-              <div className="flex md:gap-100 justify-between md:justify-start text-sm md:text-base">
+            <CardContent className="grid gap-6 ">
+              <div className="md:flex grid gap-6 md:gap-100 justify-between md:justify-start text-sm md:text-base">
                 <div className="flex gap-2 items-center">
                   <Image
                     src="/icons/calendar.svg"
@@ -128,7 +128,11 @@ export default function CardGrid() {
         {past.map((dest) => (
           <Card
             key={dest.id}
-            className="bg-[1D0C2E]/30 px-6 py-8 rounded-lg border-2 text-white grid justify-center items-center"
+            onClick={() => {
+                    setSelectedDestId(dest.id)
+                    setDialogOpen(true)
+                  }}
+            className="bg-[1D0C2E]/30 px-6 py-8 rounded-lg border-2 text-white grid justify-center items-center cursor-pointer hover:scale-105 transition"
           >
             <CardContent className="grid items-center justify-items-center gap-4">
               <Image
@@ -139,7 +143,8 @@ export default function CardGrid() {
                 className="float-planet"
               />
               <h3 className="text-xl font-semibold text-center">{dest.univ}</h3>
-              {isRecapRevealed(dest) && (
+              <p className="text-[var(--secondary-text)]">{dest.location}</p>
+              {/* {isRecapRevealed(dest) && (
                 <button
                   className="px-8 py-2 rounded-[10px] bg-white text-base font-medium text-[var(--background-gradient1)] cursor-pointer hover:border-2 hover:border-white hover:bg-transparent hover:text-white transition"
                   onClick={() => {
@@ -149,7 +154,7 @@ export default function CardGrid() {
                 >
                   Recap
                 </button>
-              )}
+              )} */}
             </CardContent>
           </Card>
         ))}

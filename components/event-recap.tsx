@@ -1,9 +1,5 @@
 "use client"
 import {
-  Card,
-  CardContent,
-} from "@/components/ui/card"
-import {
   Dialog,
   DialogContent,
   DialogHeader,
