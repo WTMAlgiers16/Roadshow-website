@@ -55,9 +55,8 @@ export default function RecapDialog({ open, onClose, destination }: DestinationD
         <div className="grid md:grid-cols-2 grid-cols-1 gap-5">
           {destination.images && destination.images.length > 0 && (
             destination.images.map((imgSrc, index) => (
-              <Card key={index} className="w-full">
-                <CardContent className="p-0">
-                  <div className="relative w-full h-60">
+              
+                  <div key={index} className="relative w-full h-60">
                     <Image
                       src={imgSrc ?? "/images/placeholder.svg"}
                       alt={`Event image ${index + 1}`}
@@ -65,8 +64,7 @@ export default function RecapDialog({ open, onClose, destination }: DestinationD
                       className="object-cover rounded-md"
                     />
                   </div>
-                </CardContent>
-              </Card>
+                
             ))
           )}
         </div>
