@@ -135,6 +135,24 @@
   }
   body{
     background: var(--gradient-cosmic);
+    padding: 50px !important;
   }
+  @media (max-width: 640px) {
+  body {
+    padding: 30px !important;
+  }
+}
+
+@keyframes floatUpDown {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.float-planet {
+  animation: floatUpDown 3s ease-in-out infinite;
+}
+
+
 }
 
