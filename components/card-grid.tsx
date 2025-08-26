@@ -1,3 +1,6 @@
+//change date
+// remove pictures from jsonkeeper
+//add agenda and club partner
 "use client"
 
 import { useState, useEffect } from "react"
@@ -62,17 +65,17 @@ export default function CardGrid() {
         {current ? (
           <Card className="md:col-span-3 sm:col-span-2 bg-[1D0C2E]/30 p-6 rounded-lg border-2 text-white">
             <CardHeader className="flex justify-between">
-              <h3 className="text-2xl md:text-3xl font-bold">{current.location}</h3>
+              <h3 className="text-2xl md:text-3xl font-bold">{current.univ}</h3>
               <Image
                 src={current.image}
-                alt={current.location}
-                width={70}
-                height={70}
-                className="float-planet"
+                alt={current.univ}
+                width={0}
+                height={0}
+                className="float-planet md:w-[100px] w-[80px] md:h-[100px] h-[80px]"
               />
             </CardHeader>
             <CardContent className="grid gap-6 ">
-              <div className="md:flex grid gap-6 md:gap-100 justify-between md:justify-start text-sm md:text-base">
+              <div className="md:flex grid justify-between gap-6 text-sm md:text-base">
                 <div className="flex gap-2 items-center">
                   <Image
                     src="/icons/calendar.svg"
@@ -105,8 +108,7 @@ export default function CardGrid() {
                     })}
                   </p>
                 </div>
-              </div>
-              <div className="flex gap-2 items-center text-sm md:text-base">
+                <div className="flex gap-2 items-center text-sm md:text-base">
                 <Image
                   src="/icons/map-icon.svg"
                   alt="location"
@@ -114,7 +116,8 @@ export default function CardGrid() {
                   height={0}
                   className="w-6 sm:w-7 md:w-7"
                 />
-                <p className="text-base md:text-xl">{current.univ}</p>
+                <p className="text-base md:text-xl">{current.location}</p>
+              </div>
               </div>
             </CardContent>
           </Card>
@@ -138,12 +141,12 @@ export default function CardGrid() {
               <Image
                 src={dest.image}
                 alt={dest.univ}
-                width={70}
-                height={70}
+                width={90}
+                height={90}
                 className="float-planet"
               />
-              <h3 className="text-xl font-semibold text-center">{dest.univ}</h3>
-              <p className="text-[var(--secondary-text)]">{dest.location}</p>
+              <h3 className="text-2xl font-bold text-center">{dest.univ}</h3>
+              <p className="text-[var(--secondary-text)] text-xl">{dest.location}</p>
               {/* {isRecapRevealed(dest) && (
                 <button
                   className="px-8 py-2 rounded-[10px] bg-white text-base font-medium text-[var(--background-gradient1)] cursor-pointer hover:border-2 hover:border-white hover:bg-transparent hover:text-white transition"
@@ -166,11 +169,11 @@ export default function CardGrid() {
             className="bg-[1D0C2E]/30 p-6 rounded-lg border-2 text-white grid justify-center items-center"
           >
             <CardContent className="grid items-center justify-items-center gap-4">
-              <div className="p-3 border-2 border-white rounded-full bg-[#D9D9D9]/30">
-                <Image src="/icons/faq.svg" alt="locked" width={30} height={30} />
+              <div className="p-4 border-2 border-white rounded-full bg-[#D9D9D9]/30">
+                <Image src="/icons/faq.svg" alt="locked" width={50} height={50} />
               </div>
-              <h3 className="text-xl font-bold">Mystery Planet</h3>
-              <p className="text-[var(--secondary-text)]">Revealed soon</p>
+              <h3 className="text-2xl font-bold">Mystery Planet</h3>
+              <p className="text-[var(--secondary-text)] text-xl">Revealed soon</p>
             </CardContent>
           </Card>
         ))}

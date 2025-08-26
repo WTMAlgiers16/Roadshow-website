@@ -23,7 +23,7 @@ export const destinations: Destination[] = [
   {
     id: 2,
     location: "El Harrach",
-    univ: "ENP",
+    univ: "École Nationale Polytechnique (ENP)",
     image: "/images/planets/dest2.svg",
     startTime: "2025-08-26T09:00:00",
     endTime: "2025-08-26T16:00:00",
@@ -31,7 +31,7 @@ export const destinations: Destination[] = [
   {
     id: 3,
     location: "Sidi Abdellah",
-    univ: "ENSIA",
+    univ: "Ecole National Supérieure d'Intelligence Artificielle (ENSIA)",
     image: "/images/planets/dest3.svg",
     startTime: "2025-08-27T09:00:00",
     endTime: "2025-08-27T16:00:00",
@@ -39,7 +39,7 @@ export const destinations: Destination[] = [
   {
     id: 4,
     location: "Bordj El Kiffan",
-    univ: "ENSTA",
+    univ: "Ecole Nationale Supérieure de Technologie Avancée (ENSTA)",
     image: "/images/planets/dest4.svg",
     startTime: "2025-08-28T09:00:00",
     endTime: "2025-08-28T16:00:00",
