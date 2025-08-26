@@ -1,5 +1,4 @@
 //change date
-// remove pictures from jsonkeeper
 //add agenda and club partner
 "use client"
 
