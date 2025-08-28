@@ -135,17 +135,6 @@
     @apply border-border outline-ring/50 font-montserrat;
   }
 
-  html{
-    height: 500vh;
-  }
-
-
-  body {
-    background: var(--gradient-cosmic); /* gradient stays steady */
-    position: relative;
-    height: 100%;
-  }
-
   body::before {
     content: "";
     position: absolute;
@@ -172,18 +161,17 @@
 }
 
 @layer utilities {
-/* .float-container {
-  display: inline-block;
-  animation: float 10s ease-in-out infinite;
+
+@keyframes floatUpDown {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
 }
 
-@keyframes float {
-  0%   { transform: translateY(0px) rotate(0deg) scale(1); }
-  25%  { transform: translateY(-10px) rotate(1deg) scale(1.02); }
-  50%  { transform: translateY(0px) rotate(0deg) scale(1); }
-  75%  { transform: translateY(10px) rotate(-1deg) scale(0.98); }
-  100% { transform: translateY(0px) rotate(0deg) scale(1); }
-} */
+.float-planet {
+  animation: floatUpDown 3s ease-in-out infinite;
+}
+
 
 /* Floating animations for 35 rocks */
 .rock1  { animation: float1 7s ease-in-out infinite; }
