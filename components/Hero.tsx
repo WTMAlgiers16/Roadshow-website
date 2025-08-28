@@ -1,7 +1,8 @@
-import Path from "./Path";
+import PathRenderer from "./PathRenderer";
+
 const Hero = () => {
   return (
-    <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-0 h-fit relative xl:px-0">
+    <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-0 h-fit relative xl:px-0 mb-32">
       <div className="flex flex-col gap-4 md:gap-6 items-center xl:items-start xl:pr-4">
         <h1 className="font-lemon text-5xl md:text-6xl xl:text-8xl text-white leading-tight text-center xl:text-left">
           Blast Off and Explore Our Roadshow Destinations
@@ -14,14 +15,14 @@ const Hero = () => {
       {/* Desktop layout - absolute positioned */}
       <div className="hidden xl:block">
         <div className="absolute -right-8 top-0 w-[800px] h-fit">
-          <Path />
+          <PathRenderer />
         </div>      
       </div>
       
       {/* Mobile/Tablet layout - normal flow */}
       <div className="xl:hidden flex justify-center mt-8">
         <div className="max-w-md md:max-w-lg w-[1200px] h-fit">
-          <Path />
+          <PathRenderer />
         </div>
       </div>
     </div>

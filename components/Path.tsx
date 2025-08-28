@@ -5,6 +5,7 @@ interface ComponentPosition {
   x: number;
   y: number;
   size: Size;
+  animationClass: string;
 }
 
 interface PathProps {
@@ -15,25 +16,27 @@ const Path: React.FC<PathProps> = ({
   pathComponents = [],
 }) => {
   const positions: ComponentPosition[] = [
-    { x: 30, y: 5, size: "large" },
-    { x: 60, y: 30, size: "medium" },
-    { x: 12, y: 50, size: "medium" },
-    { x: 60, y: 75, size: "small" },
-    { x: 90, y: 90, size: "small" },
+    { x: 26, y: 8, size: "large", animationClass: "rock1" },
+    { x: 60, y: 30, size: "medium", animationClass:"rock2" },
+    { x: 12, y: 50, size: "medium", animationClass:"rock3" },
+    { x: 60, y: 75, size: "small", animationClass:"rock4" },
+    { x: 90, y: 90, size: "small", animationClass:"rock5" },
   ];
 
   const getSizeClass = (size: Size) => {
     switch (size) {
       case "large":
-        return "w-16 h-16";
+        return "w-28 h-28";
       case "medium":
-        return "w-12 h-12";
+        return "w-24 h-24";
       case "small":
-        return "w-8 h-8";
+        return "w-20 h-20";
       default:
         return "w-12 h-12";
     }
   };
+
+  const getAnimationClass = (pos: ComponentPosition): string => pos.animationClass 
 
   return (
     <div className="relative w-full h-full">
@@ -294,7 +297,7 @@ const Path: React.FC<PathProps> = ({
       {positions.map((pos, index) => (
         <div
           key={index}
-          className={`absolute ${getSizeClass(pos.size)}  bg-blue-500 rounded-full`}
+          className={`absolute ${getSizeClass(pos.size)} ${getAnimationClass(pos)}`}
           style={{ left: `${pos.x}%`, bottom: `${pos.y}%` }}
         >
           {pathComponents[index % pathComponents.length]}
