@@ -1,5 +1,4 @@
-import Image from 'next/image';
-
+import Path from "./Path";
 const Hero = () => {
   return (
     <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-0 h-fit relative xl:px-0">
@@ -11,27 +10,19 @@ const Hero = () => {
           Pilot the rocket, land on campuses, and unlock each destination as we reveal it. Our university roadshow is a cosmic quest for ideas, innovation, and discovery
         </h3>
       </div>
-      
+
       {/* Desktop layout - absolute positioned */}
       <div className="hidden xl:block">
-        <Image
-          src="/images/rocks/path-test.svg"
-          alt="Roadshow"
-          width={800}
-          height={800}
-          className="absolute -right-8 top-0"
-        />
+        <div className="absolute -right-8 top-0 w-[800px] h-fit">
+          <Path />
+        </div>      
       </div>
       
       {/* Mobile/Tablet layout - normal flow */}
       <div className="xl:hidden flex justify-center mt-8">
-        <Image
-          src="/images/rocks/path-test.svg"
-          alt="Roadshow"
-          width={1200}
-          height={1200}
-          className="w-full max-w-md md:max-w-lg h-auto"
-        />
+        <div className="max-w-md md:max-w-lg w-[1200px] h-fit">
+          <Path />
+        </div>
       </div>
     </div>
   )

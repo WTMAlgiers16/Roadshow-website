@@ -135,6 +135,12 @@
     @apply border-border outline-ring/50 font-montserrat;
   }
 
+  body {
+    background: var(--gradient-cosmic); /* gradient stays steady */
+    position: relative;
+    height: 100%;
+  }
+  
   body::before {
     content: "";
     position: absolute;
