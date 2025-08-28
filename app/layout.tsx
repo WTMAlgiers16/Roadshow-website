@@ -19,6 +19,9 @@ const lemonJuice = localFont({
 export const metadata: Metadata = {
   title: "WTM Algiers Roadshow",
   description: "WTM Algiers Roadshow Event Page",
+  icons: {
+    icon: "/favicon.svg",
+  }
 };
 
 export default function RootLayout({

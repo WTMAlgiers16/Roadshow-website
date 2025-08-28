@@ -171,3 +171,94 @@
 
 }
 
+@layer utilities {
+/* .float-container {
+  display: inline-block;
+  animation: float 10s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%   { transform: translateY(0px) rotate(0deg) scale(1); }
+  25%  { transform: translateY(-10px) rotate(1deg) scale(1.02); }
+  50%  { transform: translateY(0px) rotate(0deg) scale(1); }
+  75%  { transform: translateY(10px) rotate(-1deg) scale(0.98); }
+  100% { transform: translateY(0px) rotate(0deg) scale(1); }
+} */
+
+/* Floating animations for 35 rocks */
+.rock1  { animation: float1 7s ease-in-out infinite; }
+.rock2  { animation: float2 9s ease-in-out infinite; }
+.rock3  { animation: float3 11s ease-in-out infinite; }
+.rock4  { animation: float4 8s ease-in-out infinite; }
+.rock5  { animation: float5 10s ease-in-out infinite; }
+.rock6  { animation: float6 12s ease-in-out infinite; }
+.rock7  { animation: float7 9s ease-in-out infinite; }
+.rock8  { animation: float8 13s ease-in-out infinite; }
+.rock9  { animation: float9 11s ease-in-out infinite; }
+.rock10 { animation: float10 14s ease-in-out infinite; }
+.rock11 { animation: float11 8s ease-in-out infinite; }
+.rock12 { animation: float12 10s ease-in-out infinite; }
+.rock13 { animation: float13 12s ease-in-out infinite; }
+.rock14 { animation: float14 9s ease-in-out infinite; }
+.rock15 { animation: float15 15s ease-in-out infinite; }
+.rock16 { animation: float16 11s ease-in-out infinite; }
+.rock17 { animation: float17 13s ease-in-out infinite; }
+.rock18 { animation: float18 8s ease-in-out infinite; }
+.rock19 { animation: float19 12s ease-in-out infinite; }
+.rock20 { animation: float20 10s ease-in-out infinite; }
+.rock21 { animation: float21 14s ease-in-out infinite; }
+.rock22 { animation: float22 9s ease-in-out infinite; }
+.rock23 { animation: float23 11s ease-in-out infinite; }
+.rock24 { animation: float24 13s ease-in-out infinite; }
+.rock25 { animation: float25 8s ease-in-out infinite; }
+.rock26 { animation: float26 12s ease-in-out infinite; }
+.rock27 { animation: float27 15s ease-in-out infinite; }
+.rock28 { animation: float28 10s ease-in-out infinite; }
+.rock29 { animation: float29 9s ease-in-out infinite; }
+.rock30 { animation: float30 14s ease-in-out infinite; }
+.rock31 { animation: float31 11s ease-in-out infinite; }
+.rock32 { animation: float32 13s ease-in-out infinite; }
+.rock33 { animation: float33 8s ease-in-out infinite; }
+.rock34 { animation: float34 12s ease-in-out infinite; }
+.rock35 { animation: float35 10s ease-in-out infinite; }
+
+/* Keyframes: each has a unique drift & rotation */
+@keyframes float1  { 0%{transform:translate(0,0) rotate(0)}25%{transform:translate(5px,-6px) rotate(1deg)}50%{transform:translate(0,0) rotate(0)}75%{transform:translate(-4px,5px) rotate(-1deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float2  { 0%{transform:translate(0,0) rotate(0)}25%{transform:translate(-6px,4px) rotate(-2deg)}50%{transform:translate(0,0) rotate(0)}75%{transform:translate(6px,-4px) rotate(2deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float3  { 0%{transform:translate(0,0) rotate(0)}50%{transform:translate(8px,-5px) rotate(3deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float4  { 0%{transform:translate(0,0) rotate(0)}25%{transform:translate(4px,6px) rotate(-1deg)}75%{transform:translate(-4px,-6px) rotate(1deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float5  { 0%{transform:translate(0,0) rotate(0)}25%{transform:translate(-5px,-5px) rotate(2deg)}75%{transform:translate(5px,5px) rotate(-2deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float6  { 0%{transform:translate(0,0) rotate(0)}50%{transform:translate(7px,7px) rotate(-3deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float7  { 0%{transform:translate(0,0) rotate(0)}25%{transform:translate(6px,-4px) rotate(1deg)}75%{transform:translate(-6px,4px) rotate(-1deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float8  { 0%{transform:translate(0,0) rotate(0)}50%{transform:translate(-8px,5px) rotate(2deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float9  { 0%{transform:translate(0,0) rotate(0)}25%{transform:translate(3px,6px) rotate(-1deg)}75%{transform:translate(-3px,-6px) rotate(1deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float10 { 0%{transform:translate(0,0) rotate(0)}50%{transform:translate(9px,-7px) rotate(-3deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float11 { 0%{transform:translate(0,0) rotate(0)}25%{transform:translate(-4px,6px) rotate(2deg)}75%{transform:translate(4px,-6px) rotate(-2deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float12 { 0%{transform:translate(0,0) rotate(0)}50%{transform:translate(-6px,8px) rotate(3deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float13 { 0%{transform:translate(0,0) rotate(0)}25%{transform:translate(5px,5px) rotate(-1deg)}75%{transform:translate(-5px,-5px) rotate(1deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float14 { 0%{transform:translate(0,0) rotate(0)}25%{transform:translate(-6px,-4px) rotate(2deg)}75%{transform:translate(6px,4px) rotate(-2deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float15 { 0%{transform:translate(0,0) rotate(0)}50%{transform:translate(10px,6px) rotate(-3deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float16 { 0%{transform:translate(0,0) rotate(0)}25%{transform:translate(4px,-6px) rotate(1deg)}75%{transform:translate(-4px,6px) rotate(-1deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float17 { 0%{transform:translate(0,0) rotate(0)}50%{transform:translate(-9px,7px) rotate(2deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float18 { 0%{transform:translate(0,0) rotate(0)}25%{transform:translate(5px,-5px) rotate(-2deg)}75%{transform:translate(-5px,5px) rotate(2deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float19 { 0%{transform:translate(0,0) rotate(0)}50%{transform:translate(7px,-8px) rotate(3deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float20 { 0%{transform:translate(0,0) rotate(0)}25%{transform:translate(-4px,5px) rotate(1deg)}75%{transform:translate(4px,-5px) rotate(-1deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float21 { 0%{transform:translate(0,0) rotate(0)}50%{transform:translate(8px,5px) rotate(-3deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float22 { 0%{transform:translate(0,0) rotate(0)}25%{transform:translate(6px,-6px) rotate(2deg)}75%{transform:translate(-6px,6px) rotate(-2deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float23 { 0%{transform:translate(0,0) rotate(0)}50%{transform:translate(-7px,-7px) rotate(3deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float24 { 0%{transform:translate(0,0) rotate(0)}25%{transform:translate(5px,6px) rotate(-1deg)}75%{transform:translate(-5px,-6px) rotate(1deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float25 { 0%{transform:translate(0,0) rotate(0)}50%{transform:translate(6px,8px) rotate(-2deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float26 { 0%{transform:translate(0,0) rotate(0)}25%{transform:translate(-4px,-5px) rotate(1deg)}75%{transform:translate(4px,5px) rotate(-1deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float27 { 0%{transform:translate(0,0) rotate(0)}50%{transform:translate(10px,-6px) rotate(-3deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float28 { 0%{transform:translate(0,0) rotate(0)}25%{transform:translate(6px,5px) rotate(-1deg)}75%{transform:translate(-6px,-5px) rotate(1deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float29 { 0%{transform:translate(0,0) rotate(0)}25%{transform:translate(-5px,4px) rotate(2deg)}75%{transform:translate(5px,-4px) rotate(-2deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float30 { 0%{transform:translate(0,0) rotate(0)}50%{transform:translate(9px,7px) rotate(-3deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float31 { 0%{transform:translate(0,0) rotate(0)}25%{transform:translate(5px,-6px) rotate(1deg)}75%{transform:translate(-5px,6px) rotate(-1deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float32 { 0%{transform:translate(0,0) rotate(0)}50%{transform:translate(-8px,6px) rotate(2deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float33 { 0%{transform:translate(0,0) rotate(0)}25%{transform:translate(4px,5px) rotate(-1deg)}75%{transform:translate(-4px,-5px) rotate(1deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float34 { 0%{transform:translate(0,0) rotate(0)}50%{transform:translate(7px,-5px) rotate(2deg)}100%{transform:translate(0,0) rotate(0)} }
+@keyframes float35 { 0%{transform:translate(0,0) rotate(0)}25%{transform:translate(-5px,6px) rotate(-2deg)}75%{transform:translate(5px,-6px) rotate(2deg)}100%{transform:translate(0,0) rotate(0)} }
+
+}
+
+
