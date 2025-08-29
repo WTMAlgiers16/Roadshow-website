@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   title: "UniTour - WTM Algiers Roadshow",
   description: "WTM Algiers Roadshow - Explore the world with UniTour",
   icons: {
-    icon: "/favicon.svg",
+    icon: "/icon.svg",
   }
 }
 
