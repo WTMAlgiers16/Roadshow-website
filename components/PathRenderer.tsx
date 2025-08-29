@@ -1,24 +1,21 @@
+"use client"
 import Path from "./Path"
-import { getSortedDestinations } from "@/data/destinations"
-import Planet from "./Planet";
+import Planet from "./Planet"
+import { useDestinationsContext } from "@/contexts/destinations"
 
-
-function getPlanets() {
-  return getSortedDestinations().map((dest) => (
+const PathRenderer = () => {
+  const { destinations } = useDestinationsContext()
+  
+  const planets = destinations.map((dest) => (
     <Planet
       key={dest.id}
       image={dest.image}
       status={dest.state}
       name={dest.state === "ongoing" ? dest.univ : undefined}
     />
-  ));
-}
+  ))
 
-const PathRenderer = () => {
-    console.log(getPlanets())
-  return (
-    <Path pathComponents={getPlanets()}/>
-  )
+  return <Path pathComponents={planets} />
 }
 
 export default PathRenderer
