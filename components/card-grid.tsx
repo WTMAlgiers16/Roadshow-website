@@ -172,7 +172,7 @@ export default function CardGrid() {
               <div className="p-4 border-2 border-white rounded-full bg-[#D9D9D9]/30">
                 <Image src="/icons/faq.svg" alt="locked" width={50} height={50} />
               </div>
-              <h3 className="text-4xl font-bold font-lemon">Mystery Planet</h3>
+              <h3 className="text-4xl font-bold font-lemon tracking-widest">Mystery Planet</h3>
               <p className="text-[var(--secondary-text)] text-xl font-montserrat">Revealed soon</p>
             </CardContent>
           </Card>
