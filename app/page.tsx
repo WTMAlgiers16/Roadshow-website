@@ -8,11 +8,12 @@ import StarBackground from "@/components/startbackground";
 export default function Home() {
   return (
     <div className="min-h-screen relative">
+      <StarBackground/>
       <Header/>
       <Hero/>
       <div className="flex gap-2 mb-6">
         <Image src="/icons/location.svg" alt="location" width={0} height={0} className="w-5"/>
-        <h2 className="text-white font-bold text-2xl">Current Destination</h2>
+        <h2 className="text-white font-semibold tracking-widest text-5xl font-lemon">Current Destination</h2>
       </div>
       <CardGrid/>
       <Footer/>

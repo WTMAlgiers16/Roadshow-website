@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" >
       <body
-        className={`${montserrat.variable} ${lemonJuice.variable} md:px-16 px-3 pb-32 pt-8 flex flex-col gap-0`}
+        className={`${montserrat.variable} ${lemonJuice.variable} md:px-14 px-3 pb-10 pt-8 flex flex-col gap-0`}
       >
         {children}
       </body>
