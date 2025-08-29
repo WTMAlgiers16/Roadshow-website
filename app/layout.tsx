@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Montserrat } from "next/font/google";
 import localFont from "next/font/local";
+import { DestinationsProvider } from "@/contexts/destinations"
+import { useDestinationsData } from "@/hooks/useDestinationsData"
 
 // Montserrat Font
 const montserrat = Montserrat({
@@ -23,6 +25,7 @@ export const metadata: Metadata = {
     icon: "/favicon.svg",
   }
 }
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -33,7 +36,9 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${lemonJuice.variable} md:px-16 px-3 pb-32 pt-8 flex flex-col gap-0`}
       >
-        {children}
+        <DestinationsProvider firestoreHook={useDestinationsData}>
+          {children}
+        </DestinationsProvider>
       </body>
     </html>
   );

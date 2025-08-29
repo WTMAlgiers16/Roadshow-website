@@ -7,12 +7,12 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog"
 import Image from "next/image"
-import { Destination } from "@/data/destinations"
+import { DestinationWithState } from "@/data/destinations"
 
 type DestinationDialogProps = {
   open: boolean
   onClose: () => void
-  destination: Destination | null
+  destination: DestinationWithState | null
 }
 
 export default function RecapDialog({ open, onClose, destination }: DestinationDialogProps) {
@@ -51,16 +51,14 @@ export default function RecapDialog({ open, onClose, destination }: DestinationD
         <div className="grid md:grid-cols-2 grid-cols-1 gap-5">
           {destination.images && destination.images.length > 0 && (
             destination.images.map((imgSrc, index) => (
-              
-                  <div key={index} className="relative w-full h-60">
-                    <Image
-                      src={imgSrc ?? "/images/placeholder.svg"}
-                      alt={`Event image ${index + 1}`}
-                      fill
-                      className="object-cover rounded-md"
-                    />
-                  </div>
-                
+              <div key={index} className="relative w-full h-60">
+                <Image
+                  src={imgSrc ?? "/images/placeholder.svg"}
+                  alt={`Event image ${index + 1}`}
+                  fill
+                  className="object-cover rounded-md"
+                />
+              </div>
             ))
           )}
         </div>
