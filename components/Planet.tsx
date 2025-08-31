@@ -46,7 +46,7 @@ const Planet = ({ image, status, name, universityImage }: PlanetProps) => {
             alt="planet"
             width={160}
             height={160}
-            className={status === "upcoming" ? "brightness-50" : ""}
+            className={`${status === "upcoming" ? "brightness-50" : ""} hover:cursor-pointer`}
           />
         </HoverCardTrigger>
         <HoverCardContent className="grid gap-2 w-48 text-center bg-white text-black p-4 rounded-lg shadow-lg">
