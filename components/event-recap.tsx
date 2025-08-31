@@ -15,6 +15,7 @@ type DestinationDialogProps = {
   destination: DestinationWithState | null
 }
 
+
 export default function RecapDialog({ open, onClose, destination }: DestinationDialogProps) {
   if (!destination) return null
 
