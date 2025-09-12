@@ -105,12 +105,9 @@ export function calculateDestinationStatus(startTime: string, endTime: string, n
   revealTime.setDate(revealTime.getDate() - 1)
   revealTime.setHours(20, 0, 0, 0)   // <-- FIXED
   
-  // Recap available on event day at 9 PM (21:00)
-  const recapTime = new Date(start)
-  recapTime.setHours(21, 0, 0, 0)
   
   if (now < revealTime) return "upcoming"
-  if (now >= revealTime && now < recapTime) return "ongoing"
+  if (now >= revealTime && now < end) return "ongoing"
   return "finished"
 }
 
