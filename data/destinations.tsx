@@ -50,8 +50,8 @@ export const destinations: Destination[] = [
     univ: "USTHB",
     image: "/images/planets/dest1.svg",
     universityImage: "/univ-pics/usthb.jpg",
-    startTime: "2025-07-28T09:00:00",
-    endTime: "2025-07-29T16:00:00",
+    startTime: "2025-09-10T09:00:00",
+    endTime: "2025-09-10T16:00:00",
   },
   {
     id: 2,
@@ -59,8 +59,8 @@ export const destinations: Destination[] = [
     univ: "École Nationale Polytechnique (ENP)",
     image: "/images/planets/dest2.svg",
     universityImage: "/univ-pics/enp.png",
-    startTime: "2025-07-29T09:00:00",
-    endTime: "2025-07-29T16:00:00",
+    startTime: "2025-09-11T09:00:00",
+    endTime: "2025-09-11T16:00:00",
   },
   {
     id: 3,
@@ -68,8 +68,8 @@ export const destinations: Destination[] = [
     univ: "ENSIA",
     image: "/images/planets/dest3.svg",
     universityImage: "/univ-pics/ensia.jpg",
-    startTime: "2025-07-30T09:00:00",
-    endTime: "2025-07-30T16:00:00",
+    startTime: "2025-09-12T09:00:00",
+    endTime: "2025-09-12T16:00:00",
   },
   {
     id: 4,
@@ -77,8 +77,8 @@ export const destinations: Destination[] = [
     univ: "ENSTA",
     image: "/images/planets/dest4.svg",
     universityImage: "/univ-pics/ensta.png",
-    startTime: "2025-08-01T09:00:00",
-    endTime: "2025-08-01T16:00:00",
+    startTime: "2025-09-13T09:00:00",
+    endTime: "2025-09-13T16:00:00",
   },
   {
     id: 5,
@@ -86,10 +86,11 @@ export const destinations: Destination[] = [
     univ: "ZIANIA",
     image: "/images/planets/dest5.svg",
     universityImage: "/univ-pics/ziania.jpg",
-    startTime: "2025-09-01T09:00:00",
-    endTime: "2025-09-01T16:00:00",
+    startTime: "2025-09-14T09:00:00",
+    endTime: "2025-09-14T16:00:00",
   },
-]
+];
+
 
 // ================================
 // UTILITY FUNCTIONS
@@ -110,7 +111,7 @@ export function calculateRevealStatus(startTime: string, now: Date = new Date())
   // Revealed the night before at 8 PM (20:00)
   const revealTime = new Date(start)
   revealTime.setDate(revealTime.getDate() - 1)
-  revealTime.setHours(12, 0, 0, 0)   // <-- FIXED
+  revealTime.setHours(20, 0, 0, 0)   // <-- FIXED
   
   // Recap available on event day at 9 PM (21:00)
   const recapTime = new Date(start)
