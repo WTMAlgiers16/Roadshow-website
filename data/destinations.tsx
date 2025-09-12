@@ -99,9 +99,18 @@ export const destinations: Destination[] = [
 export function calculateDestinationStatus(startTime: string, endTime: string, now: Date = new Date()): DestinationStatus {
   const start = new Date(startTime)
   const end = new Date(endTime)
+
+  // Revealed the night before at 8 PM (20:00)
+  const revealTime = new Date(start)
+  revealTime.setDate(revealTime.getDate() - 1)
+  revealTime.setHours(20, 0, 0, 0)   // <-- FIXED
   
-  if (now < start) return "upcoming"
-  if (now >= start && now < end) return "ongoing"
+  // Recap available on event day at 9 PM (21:00)
+  const recapTime = new Date(start)
+  recapTime.setHours(21, 0, 0, 0)
+  
+  if (now < revealTime) return "upcoming"
+  if (now >= revealTime && now < recapTime) return "ongoing"
   return "finished"
 }
 
