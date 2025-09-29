@@ -7,11 +7,11 @@ import StarBackground from "@/components/startbackground";
         
 export default function Home() {
   return (
-    <div className="min-h-screen relative">
-      <StarBackground/>
+    <div className="min-h-screen">
       <Header/>
+      <StarBackground/>
       <Hero/>
-      <div className="flex gap-2 mb-6">
+      <div className="flex gap-2 mb-6 mt-52">
         <Image src="/icons/location.svg" alt="location" width={0} height={0} className="w-5"/>
         <h2 className="text-white font-semibold tracking-widest text-5xl font-lemon">Current Destination</h2>
       </div>

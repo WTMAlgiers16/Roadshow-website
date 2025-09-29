@@ -51,7 +51,7 @@ export const destinations: Destination[] = [
     image: "/images/planets/dest1.svg",
     universityImage: "/univ-pics/usthb.jpg",
     startTime: "2025-10-04T09:00:00",
-    endTime: "2025-10-04T16:00:00",
+    endTime: "2025-10-04T16:00:00", 
   },
 {
     id: 2,
@@ -89,8 +89,10 @@ export const destinations: Destination[] = [
     universityImage: "/univ-pics/ensta.png",
     startTime: "2025-10-03T09:00:00",
     endTime: "2025-10-03T16:00:00",
+
   },
-]
+];
+
 
 // ================================
 // UTILITY FUNCTIONS
@@ -99,9 +101,15 @@ export const destinations: Destination[] = [
 export function calculateDestinationStatus(startTime: string, endTime: string, now: Date = new Date()): DestinationStatus {
   const start = new Date(startTime)
   const end = new Date(endTime)
+
+  // Revealed the night before at 8 PM (20:00)
+  const revealTime = new Date(start)
+  revealTime.setDate(revealTime.getDate() - 1)
+  revealTime.setHours(20, 0, 0, 0)   // <-- FIXED
   
-  if (now < start) return "upcoming"
-  if (now >= start && now < end) return "ongoing"
+  
+  if (now < revealTime) return "upcoming"
+  if (now >= revealTime && now < end) return "ongoing"
   return "finished"
 }
 
