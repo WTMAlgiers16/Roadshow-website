@@ -50,44 +50,45 @@ export const destinations: Destination[] = [
     univ: "USTHB",
     image: "/images/planets/dest1.svg",
     universityImage: "/univ-pics/usthb.jpg",
-    startTime: "2025-07-28T09:00:00",
-    endTime: "2025-07-29T16:00:00",
+    startTime: "2025-10-04T09:00:00",
+    endTime: "2025-10-04T16:00:00",
   },
-  {
+{
     id: 2,
-    location: "El Harrach",
-    univ: "École Nationale Polytechnique (ENP)",
-    image: "/images/planets/dest2.svg",
-    universityImage: "/univ-pics/enp.png",
-    startTime: "2025-07-29T09:00:00",
-    endTime: "2025-07-29T16:00:00",
-  },
-  {
-    id: 3,
-    location: "Sidi Abdellah",
-    univ: "ENSIA",
-    image: "/images/planets/dest3.svg",
-    universityImage: "/univ-pics/ensia.jpg",
-    startTime: "2025-07-30T09:00:00",
-    endTime: "2025-07-30T16:00:00",
-  },
-  {
-    id: 4,
-    location: "Bordj El Kiffan",
-    univ: "ENSTA",
-    image: "/images/planets/dest4.svg",
-    universityImage: "/univ-pics/ensta.png",
-    startTime: "2025-08-01T09:00:00",
-    endTime: "2025-08-01T16:00:00",
-  },
-  {
-    id: 5,
     location: "El Biar",
     univ: "ZIANIA",
     image: "/images/planets/dest5.svg",
     universityImage: "/univ-pics/ziania.jpg",
-    startTime: "2025-09-01T09:00:00",
-    endTime: "2025-09-01T16:00:00",
+    startTime: "2025-10-05T09:00:00",
+    endTime: "2025-10-05T16:00:00",
+  },
+{
+    id: 3,
+    location: "El Harrach",
+    univ: "École Nationale Polytechnique (ENP)",
+    image: "/images/planets/dest2.svg",
+    universityImage: "/univ-pics/enp.png",
+    startTime: "2025-10-06T09:00:00",
+    endTime: "2025-10-06T16:00:00",
+  },
+  {
+    id: 4,
+    location: "Sidi Abdellah",
+    univ: "ENSIA",
+    image: "/images/planets/dest3.svg",
+    universityImage: "/univ-pics/ensia.jpg",
+    startTime: "2025-10-07T09:00:00",
+    endTime: "2025-10-07T16:00:00",
+  },
+  
+  {
+    id: 5,
+    location: "Bordj El Kiffan",
+    univ: "ENSTA",
+    image: "/images/planets/dest4.svg",
+    universityImage: "/univ-pics/ensta.png",
+    startTime: "2025-10-03T09:00:00",
+    endTime: "2025-10-03T16:00:00",
   },
 ]
 
@@ -110,7 +111,7 @@ export function calculateRevealStatus(startTime: string, now: Date = new Date())
   // Revealed the night before at 8 PM (20:00)
   const revealTime = new Date(start)
   revealTime.setDate(revealTime.getDate() - 1)
-  revealTime.setHours(12, 0, 0, 0)   // <-- FIXED
+  revealTime.setHours(20, 0, 0, 0)   // <-- FIXED
   
   // Recap available on event day at 9 PM (21:00)
   const recapTime = new Date(start)
