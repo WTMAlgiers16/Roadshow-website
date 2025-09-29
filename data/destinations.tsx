@@ -46,6 +46,16 @@ export type FirestoreDestinationData = Record<number, {
 export const destinations: Destination[] = [
   {
     id: 1,
+    location: "Bordj El Kiffan",
+    univ: "ENSTA",
+    image: "/images/planets/dest5.svg",
+    universityImage: "/univ-pics/ensta.png",
+    startTime: "2025-10-03T09:00:00",
+    endTime: "2025-10-03T16:00:00",
+
+  },
+  {
+    id: 2,
     location: "Bab Ezzouar",
     univ: "USTHB",
     image: "/images/planets/dest1.svg",
@@ -54,42 +64,31 @@ export const destinations: Destination[] = [
     endTime: "2025-10-04T16:00:00", 
   },
 {
-    id: 2,
+    id: 3,
     location: "El Biar",
     univ: "ZIANIA",
-    image: "/images/planets/dest5.svg",
+    image: "/images/planets/dest2.svg",
     universityImage: "/univ-pics/ziania.jpg",
     startTime: "2025-10-05T09:00:00",
     endTime: "2025-10-05T16:00:00",
   },
 {
-    id: 3,
+    id: 4,
     location: "El Harrach",
     univ: "École Nationale Polytechnique (ENP)",
-    image: "/images/planets/dest2.svg",
+    image: "/images/planets/dest3.svg",
     universityImage: "/univ-pics/enp.png",
     startTime: "2025-10-06T09:00:00",
     endTime: "2025-10-06T16:00:00",
   },
   {
-    id: 4,
+    id: 5,
     location: "Sidi Abdellah",
     univ: "ENSIA",
-    image: "/images/planets/dest3.svg",
+    image: "/images/planets/dest4.svg",
     universityImage: "/univ-pics/ensia.jpg",
     startTime: "2025-10-07T09:00:00",
     endTime: "2025-10-07T16:00:00",
-  },
-  
-  {
-    id: 5,
-    location: "Bordj El Kiffan",
-    univ: "ENSTA",
-    image: "/images/planets/dest4.svg",
-    universityImage: "/univ-pics/ensta.png",
-    startTime: "2025-10-03T09:00:00",
-    endTime: "2025-10-03T16:00:00",
-
   },
 ];
 
