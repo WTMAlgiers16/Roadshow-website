@@ -16,11 +16,10 @@ const Path: React.FC<PathProps> = ({
   pathComponents = [],
 }) => {
   const positions: ComponentPosition[] = [
-    { x: 26, y: 8, size: "large", animationClass: "rock1" },
-    { x: 60, y: 30, size: "medium", animationClass:"rock2" },
-    { x: 12, y: 50, size: "medium", animationClass:"rock3" },
-    { x: 60, y: 75, size: "small", animationClass:"rock4" },
-    { x: 90, y: 90, size: "small", animationClass:"rock5" },
+    { x: 24, y: 8, size: "medium", animationClass: "rock1" },
+    { x: 55, y: 34, size: "medium", animationClass:"rock2" },
+    { x: 50, y: 70, size: "small", animationClass:"rock3" },
+    { x: 80, y: 85, size: "small", animationClass:"rock4" },
   ];
 
   const getSizeClass = (size: Size) => {
