@@ -78,8 +78,8 @@ export const destinations: Destination[] = [
     univ: "ZIANIA",
     image: "/images/planets/dest4.svg",
     universityImage: "/univ-pics/ziania.jpg",
-    startTime: "2025-10-14T09:00:00",
-    endTime: "2025-10-14T16:00:00",
+    startTime: "2025-10-09T09:00:00",
+    endTime: "2025-10-09T16:00:00",
   },
 ];
 
