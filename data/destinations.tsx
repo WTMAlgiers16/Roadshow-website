@@ -52,7 +52,7 @@ export const destinations: Destination[] = [
     universityImage: "/univ-pics/nhsm.png",
     startTime: "2025-10-06T09:00:00",
     endTime: "2025-10-06T16:00:00",
-
+    images: ["/images/recaps/nhsm/recap1.jpg", "/images/recaps/nhsm/recap2.jpg", "/images/recaps/nhsm/recap3.jpg", "/images/recaps/nhsm/recap4.jpg", "/images/recaps/nhsm/recap5.jpg"],
   },
   {
     id: 2,
