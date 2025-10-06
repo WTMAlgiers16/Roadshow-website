@@ -113,7 +113,7 @@ export function calculateRevealStatus(startTime: string, now: Date = new Date())
   
   // Recap available on event day at 9 PM (21:00)
   const recapTime = new Date(start)
-  recapTime.setHours(21, 0, 0, 0)
+  recapTime.setHours(20, 0, 0, 0)
   
   if (now < revealTime) return "hidden"
   if (now >= revealTime && now < recapTime) return "revealed"
