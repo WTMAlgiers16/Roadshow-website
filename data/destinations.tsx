@@ -33,7 +33,6 @@ export type DestinationsContextValue = {
 
 export type FirestoreDestinationData = Record<number, { 
   attendees?: number
-  images?: string[] 
 }>
 
 
@@ -124,7 +123,7 @@ export function calculateRevealStatus(startTime: string, now: Date = new Date())
 export function enrichDestination(
   base: Destination, 
   firestoreData: Record<number, { attendees?: number; images?: string[] }> = {},
-  localUpdates: Record<number, Partial<Pick<Destination, 'attendees' | 'images'>>> = {},
+  localUpdates: Record<number, Partial<Pick<Destination, 'attendees'>>> = {},
   now: Date = new Date()
 ): DestinationWithState {
   const state = calculateDestinationStatus(base.startTime, base.endTime, now)
@@ -137,7 +136,6 @@ export function enrichDestination(
     state,
     revealStatus,
     attendees: local.attendees ?? firestore.attendees ?? base.attendees ?? 0,
-    images: local.images ?? firestore.images ?? base.images ?? []
   }
 }
 
