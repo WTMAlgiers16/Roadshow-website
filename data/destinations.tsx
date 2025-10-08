@@ -74,10 +74,10 @@ export const destinations: Destination[] = [
   },
   {
     id: 4,
-    location: "",
-    univ: "The end of the roadshow",
+    location: "El Biar",
+    univ: "ZIANIA",
     image: "/images/planets/dest4.svg",
-    universityImage: "",
+    universityImage: "/univ-pics/ziania.jpg",
     startTime: "2025-11-09T09:00:00",
     endTime: "2025-11-09T16:00:00",
   },
