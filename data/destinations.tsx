@@ -72,7 +72,15 @@ export const destinations: Destination[] = [
     startTime: "2025-10-08T09:00:00",
     endTime: "2025-10-08T16:00:00",
   },
-  
+  {
+    id: 4,
+    location: "",
+    univ: "The end of the roadshow",
+    image: "/images/planets/dest4.svg",
+    universityImage: "",
+    startTime: "2025-11-09T09:00:00",
+    endTime: "2025-11-09T16:00:00",
+  },
 ];
 
 
